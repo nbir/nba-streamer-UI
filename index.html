@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)http://twitter.github.io/bootstrap/examples/hero.html -->
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>NBA Draft 2013 Streamer</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<!-- Le styles -->
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<style type="text/css">
+			body {
+				padding-top: 20px;
+				padding-bottom: 40px;
+			}
+		</style>
+		<link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+
+		<style type="text/css">
+			h3 {
+				width:100%;
+				height:100%;
+				text-indent: 10px;
+				font-weight: 200;
+				border-top: 6px groove #e9e9e9;
+			}
+
+			.green-light, .red-light, .grey-light {
+			    margin:auto;
+			    padding:0;
+			    width:30px;
+			    height:30px;
+			    line-height:35px;
+			    background-color: #4DAF4A;
+			    border-radius:15px;
+			    border:0px #aaa outset;
+			}
+			.red-light {
+				background-color: #ff3a2a;
+			}
+			.grey-light {
+				background-color: #ccc;
+			}
+			.push-down-20 {
+				padding: 20px 0 0 0;
+			}
+
+			.big-text {
+				font-size: 35px;
+				line-height: 35px;
+			}
+			.bold {
+				font-weight: bold;
+			}
+
+			textarea {
+				color: #777;
+				font-weight: 300;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="container">
+
+			<div class="masthead">
+				<ul class="nav nav-pills pull-right">
+					<li><a id="a-scrapy-log" href="#" target="_blank">Scrapy log</a></li>
+					<li><a id="a-broker-log" href="#" target="_blank">Broker log</a></li>
+					<li><a id="a-streamer-log" href="#" target="_blank">Streamer log</a></li>
+				</ul>
+				<h2 class="muted">NBA Draft 2013 streamer</h2>
+			</div>
+
+			<hr>
+
+			<!--  -->
+			<div class="row">
+			
+				<!-- CHART CANVAS -->
+				<div class="span8">
+					<h3>Last 5 days</h3>
+					<canvas id="data-canvas" height="250" width="775"></canvas>
+				</div>
+				
+				<!-- STREAMER STATUS -->
+				<div class="span4">
+					<div class="row">
+						<div class="span1 push-down-20"><div id="status-streamer" class="grey-light pull-right"></div></div>
+						<div class="span3"><h3>Collected</h3></div>
+					</div>
+					<div class="row">
+						<div class="span3 offset1">
+							<p><span id="val-tweets-total" class="big-text">0</span>
+							<span class="muted">tweets</span></p>
+						</div>
+						<div class="span3 offset1">
+							<p><span id="val-tweets-geo" class="big-text">0</span>
+							<span class="muted">geo-tagged</span></p>
+						</div>
+						<div class="span3 offset1">
+							<canvas id="pie-canvas" height="150" width="150"></canvas>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<hr>
+			
+			<!--  -->
+			<div class="row">
+				<div class="span12">
+
+					<div class="row">
+						<div class="span8">
+
+							<!--  SCRAPERS -->
+							<div id="div-scrapers" class="row">
+
+							</div>	
+						</div>
+
+
+						<!-- BROKER & SCRAPER STATUS -->
+						<div class="span4">
+							<div class="row">
+							
+								<div class="span4">
+									<div class="row">
+										<div class="span1 push-down-20"><div id="status-broker" class="grey-light pull-right"></div></div>
+										<div class="span3"><h3>Token Broker</h3></div>
+									</div>
+									<div class="row">
+										<div class="span3 offset1">
+											<p><span id="val-tokens-total" class="big-text">0</span>
+											<span class="muted">total</span></p>
+										</div>
+										<div class="span3 offset1">
+											<p><span id="val-tokens-used" class="big-text">0</span>
+											<span class="muted">used</span></p>
+										</div>
+										<div class="span3 offset1">
+											<p><span id="val-tokens-available" class="big-text">0</span>
+											<span class="muted">available</span></p>
+										</div>
+									</div>
+								</div>
+								<div class="span4">
+									<div class="row">
+										<div class="span1 push-down-20"><div id="status-scraper" class="grey-light pull-right"></div></div>
+										<div class="span3"><h3>Scraper service</h3></div>
+									</div>
+									<div class="row">
+										<div class="span3 offset1">
+											<p><span id="val-streams-total" class="big-text">0</span>
+											<span class="muted">streams</span></p>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						<div>
+
+					<div>
+
+				</div>
+			</div>
+
+		
+		</div> <!-- /container -->
+
+		<!-- Le javascript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.min.js"></script>
+		<script src="js/Chart.min.js"></script>
+
+		<script src="js/nba-streamer.js"></script>
+
+	</body>
+</html>

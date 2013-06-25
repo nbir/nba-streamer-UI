@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)http://twitter.github.io/bootstrap/examples/hero.html -->
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Bootstrap, from Twitter</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<!-- Le styles -->
+		<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+		<style type="text/css">
+			body {
+				padding-top: 0px;
+				padding-bottom: 40px;
+			}
+		</style>
+		<link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+
+		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+		<!--[if lt IE 9]>
+		<script src="../assets/js/html5shiv.js"></script>
+		<![endif]-->
+		
+		<style type="text/css">
+			h3 {
+				width:100%;
+				height:100%;
+				text-indent: 10px;
+				font-weight: 400;
+				border-top: 6px groove #e9e9e9;
+			}
+
+			.green-light, .red-light {
+			    margin:auto;
+			    padding:0;
+			    width:30px;
+			    height:30px;
+			    line-height:35px;
+			    background-color: #4DAF4A;
+			    border-radius:15px;
+			    border:0px #aaa outset;
+			}
+			.red-light {
+				background-color: #ff3a2a;
+			}
+			.push-down-20 {
+				padding: 20px 0 0 0;
+			}
+
+			.big-text {
+				font-size: 35px;
+				line-height: 35px;
+			}
+			.bold {
+				font-weight: bold;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="container">
+			<div class="masthead">
+				<ul class="nav nav-pills pull-right">
+					<li><a href="http://brain.isi.edu:4002/scraper/">City scraper</a></li>
+					<li><a href="http://brain.isi.edu/~gambit/v2.0/">Gambit vis.</a></li>
+				</ul>
+				<h2 class="muted">NBA Draft 2013 streamer</h2>
+			</div>
+
+			<hr>
+
+			<!--  -->
+			<div class="row">
+			
+				<div class="span8">
+					<canvas id="canvas" height="250" width="775"></canvas>
+				</div>
+				<div class="span4">
+					<div class="row">
+						<div class="span1 push-down-20"><div class="green-light pull-right"></div></div>
+						<div class="span3"><h3>Collected</h3></div>
+					</div>
+					<div class="row">
+						<div class="span3 offset1">
+							<p><span class="big-text">10907324</span>
+							<span class="muted">tweets</span></p>
+						</div>
+						<div class="span3 offset1">
+							<p><span class="big-text">109093</span>
+							<span class="muted">geo-tagged</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<hr>
+			
+			<!--  -->
+			<div class="row">
+				<div class="span12">
+
+					<div class="row">
+						<div class="span8">
+
+							<!-- DEFAULT SCRAPERS -->
+							<div class="row">
+						
+								<div class="span8">
+									<h3>Default scraper 2</h3>
+									<div class="row">
+										<div class="span1">
+											<div class="green-light"></div>
+										</div>
+										<div class="span2">
+											<p><span class="big-text">45.67</span>
+											<span class="muted">tpm</span></p>
+										</div>
+										<div class="span2">
+											<p><span class="big-text">598</span>
+											<span class="muted">this session</span></p>
+										</div>
+										<div class="span2">
+											<p><span class="big-text">1098</span>
+											<span class="muted">in cache</span></p>
+										</div>
+										<div class="span1">
+											<a class="btn" href="#"><i class="icon-refresh"></i></a>
+										</div>
+									</div>
+									<textarea class="span8" rows="3" cols="100" readonly="readonly"></textarea>
+								</div>
+								<div class="span8">
+									<h3>Default scraper 2</h3>
+									<div class="row">
+										<div class="span1">
+											<div class="red-light"></div>
+										</div>
+										<div class="span2">
+											<p><span class="big-text">45.67</span>
+											<span class="muted">tpm</span></p>
+										</div>
+										<div class="span2">
+											<p><span class="big-text">598</span>
+											<span class="muted">this session</span></p>
+										</div>
+										<div class="span2">
+											<p><span class="big-text">1098</span>
+											<span class="muted">in cache</span></p>
+										</div>
+										<div class="span1">
+											<a class="btn" href="#"><i class="icon-refresh"></i></a>
+										</div>
+									</div>
+									<textarea class="span8" rows="3" cols="100" readonly="readonly"></textarea>
+								</div>
+
+							</div>
+
+							<hr>
+	
+							<!-- FOLLOW SCRAPERS -->
+							<div class="row">
+
+								<div class="span8">
+									<h3>Follow scraper 2</h3>
+									<div class="row">
+										<div class="span1">
+											<div class="green-light"></div>
+										</div>
+										<div class="span2">
+											<p><span class="big-text">45.67</span>
+											<span class="muted">tpm</span></p>
+										</div>
+										<div class="span2">
+											<p><span class="big-text">598</span>
+											<span class="muted">this session</span></p>
+										</div>
+										<div class="span2">
+											<p><span class="big-text">1098</span>
+											<span class="muted">in cache</span></p>
+										</div>
+										<div class="span1">
+											<a class="btn" href="#"><i class="icon-refresh"></i></a>
+										</div>
+									</div>
+									<textarea class="span8" rows="3" cols="100" readonly="readonly"></textarea>
+								</div>
+								<div class="span8">
+									<h3>Follow scraper 2</h3>
+									<div class="row">
+										<div class="span1">
+											<div class="red-light"></div>
+										</div>
+										<div class="span2">
+											<p><span class="big-text">45.67</span>
+											<span class="muted">tpm</span></p>
+										</div>
+										<div class="span2">
+											<p><span class="big-text">598</span>
+											<span class="muted">this session</span></p>
+										</div>
+										<div class="span2">
+											<p><span class="big-text">1098</span>
+											<span class="muted">in cache</span></p>
+										</div>
+										<div class="span1">
+											<a class="btn" href="#"><i class="icon-refresh"></i></a>
+										</div>
+									</div>
+									<textarea class="span8" rows="3" cols="100" readonly="readonly"></textarea>
+								</div>
+
+							</div>	
+						</div>
+
+
+						<!--  -->
+						<div class="span4">
+							<div class="row">
+							
+								<div class="span4">
+									<div class="row">
+										<div class="span1 push-down-20"><div class="green-light pull-right"></div></div>
+										<div class="span3"><h3>Token Broker</h3></div>
+									</div>
+									<div class="row">
+										<div class="span3 offset1">
+											<p><span class="big-text">20</span>
+											<span class="muted">total</span></p>
+										</div>
+										<div class="span3 offset1">
+											<p><span class="big-text">7</span>
+											<span class="muted">used</span></p>
+										</div>
+										<div class="span3 offset1">
+											<p><span class="big-text">14</span>
+											<span class="muted">available</span></p>
+										</div>
+									</div>
+								</div>
+								<div class="span4">
+									<div class="row">
+										<div class="span1 push-down-20"><div class="green-light pull-right"></div></div>
+										<div class="span3"><h3>Scraper service</h3></div>
+									</div>
+									<div class="row">
+										<div class="span3 offset1">
+											<p><span class="big-text">20</span>
+											<span class="muted">streams</span></p>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						<div>
+
+					<div>
+
+				</div>
+			</div>
+
+		
+		</div> <!-- /container -->
+
+		<!-- Le javascript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.min.js"></script>
+		<script src="bootstrap/js/bootstrap-transition.js"></script>
+		<script src="bootstrap/js/bootstrap-alert.js"></script>
+		<script src="bootstrap/js/bootstrap-modal.js"></script>
+		<script src="bootstrap/js/bootstrap-dropdown.js"></script>
+		<script src="bootstrap/js/bootstrap-scrollspy.js"></script>
+		<script src="bootstrap/js/bootstrap-tab.js"></script>
+		<script src="bootstrap/js/bootstrap-tooltip.js"></script>
+		<script src="bootstrap/js/bootstrap-popover.js"></script>
+		<script src="bootstrap/js/bootstrap-button.js"></script>
+		<script src="bootstrap/js/bootstrap-collapse.js"></script>
+		<script src="bootstrap/js/bootstrap-carousel.js"></script>
+		<script src="bootstrap/js/bootstrap-typeahead.js"></script>
+
+		<script src="js/Chart.js"></script>
+		<script>
+			var data = [12, 8276, 10518, 18631, 15317, 36664, 37556, 14046, 8546, 3193];
+			do {
+				data.unshift(0);
+			} while(data.length < 120);
+			console.log(data);
+			console.log(data.length)
+			var lbl = Array(data.length + 1).join(' ');
+			var chart_data = {
+				labels : lbl,
+				datasets : [
+					{
+						fillColor : "rgba(151,187,205,0.5)",
+						strokeColor : "rgba(151,187,205,1)",
+						pointColor : "rgba(151,187,205,1)",
+						pointStrokeColor : "#fff",
+						data : data
+					}
+				]
+
+			}
+
+			var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Line(chart_data, {
+				"scaleShowGridLines" : false,
+				"pointDot" : false,
+				"animation" : false,
+			});
+		</script>
+
+	</body>
+</html>
