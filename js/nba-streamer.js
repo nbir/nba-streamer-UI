@@ -38,6 +38,8 @@ $(function() {
 		setInterval(update_broker, 5000);
 		update_scraper();
 		setInterval(update_scraper, 30000);
+		update_hoops();
+		setInterval(update_hoops, 5000);
 
 		render_chart();
 		setInterval(render_chart, 60000);
@@ -137,6 +139,28 @@ $(function() {
 		});
 	}
 
+	function update_hoops() {
+		$.ajax({
+			url: URL_STREAMER + '/hoops_users/',
+			type: 'GET',
+			dataType:'text',
+			error: function(data) {
+				console.log('Error!');
+				console.log(data);
+				change_indicator($('#status-hoops'), 'red-light')
+			},
+			success: function(data) {
+				if(data.length > 0) {
+					change_indicator($('#status-hoops'), 'green-light');
+				}
+				else {
+					change_indicator($('#status-hoops'), 'red-light');
+				}
+				$('#val-hoops-users').text(data);
+			}
+		});
+	}
+
 	function change_indicator(dom, light) {
 		dom.removeClass('grey-light');
 		dom.removeClass('green-light');
@@ -218,7 +242,7 @@ $(function() {
 							'status' : scraper['status'],
 							'rate' : scraper['rate'].toFixed(2),
 							'session' : scraper['received'],
-							'cache' : scraper['total_received'],
+							'limits' : scraper['limits'],
 							'filter' : scraper['filter']
 						};
 						if('track' in scraper_info[id]['filter']) {
@@ -256,24 +280,23 @@ $(function() {
 				scrapers[id]['status'] = scraper['status'];
 				scrapers[id]['rate'] = scraper['rate'];
 				scrapers[id]['session'] = scraper['session'];
-				scrapers[id]['cache'] = scraper['cache'];
+				scrapers[id]['limits'] = scraper['limits'];
 				scrapers[id]['filter'] = scraper['filter'];
 
 				change_indicator($('#' + scrapers[id]['dom-light']), indicator_color(scrapers[id]['status']));
 				$('#' + scrapers[id]['dom-rate']).text(scrapers[id]['rate']);
 				$('#' + scrapers[id]['dom-session']).text(scrapers[id]['session']);
-				$('#' + scrapers[id]['dom-cache']).text(scrapers[id]['cache']);
+				$('#' + scrapers[id]['dom-limits']).text(scrapers[id]['limits']);
 				$('#' + scrapers[id]['dom-filter']).val(scrapers[id]['filter']);
 			}
 
 			else {
 				scrapers[id] = scraper;
-				var dom_id = 'sid' + id;
 				scrapers[id]['dom-ref'] = 'sid' + id;
 				scrapers[id]['dom-light'] = 'sid' + id + '-light';
 				scrapers[id]['dom-rate'] = 'sid' + id + '-rate';
 				scrapers[id]['dom-session'] = 'sid' + id + '-session';
-				scrapers[id]['dom-cache'] = 'sid' + id + '-cache';
+				scrapers[id]['dom-limits'] = 'sid' + id + '-limits';
 				scrapers[id]['dom-filter'] = 'sid' + id + '-filter';
 				var html = ' \
 					<div id="' + scrapers[id]['dom-ref'] + '" class="span8"> \
@@ -291,8 +314,8 @@ $(function() {
 								<span class="muted">this session</span></p> \
 							</div> \
 							<div class="span2"> \
-								<p><span id="' + scrapers[id]['dom-cache'] + '" class="big-text">--</span> \
-								<span class="muted">in cache</span></p> \
+								<p><span id="' + scrapers[id]['dom-limits'] + '" class="big-text">--</span> \
+								<span class="muted">limits</span></p> \
 							</div> \
 							<div class="span1"> \
 								<a class="btn" href="#"><i class="icon-refresh"></i></a> \
@@ -306,7 +329,7 @@ $(function() {
 				change_indicator($('#' + scrapers[id]['dom-light']), indicator_color(scrapers[id]['status']));
 				$('#' + scrapers[id]['dom-rate']).text(scrapers[id]['rate']);
 				$('#' + scrapers[id]['dom-session']).text(scrapers[id]['session']);
-				$('#' + scrapers[id]['dom-cache']).text(scrapers[id]['cache']);
+				$('#' + scrapers[id]['dom-limits']).text(scrapers[id]['limits']);
 				$('#' + scrapers[id]['dom-filter']).val(scrapers[id]['filter']);
 			}
 		});
